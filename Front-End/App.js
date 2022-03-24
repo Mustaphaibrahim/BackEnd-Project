@@ -19,6 +19,7 @@ const App = ()=>{
 
 
     return (
+    
         <>
         <div className="App">
             <h1> Welcome To Our Shop</h1>
@@ -34,6 +35,13 @@ const App = ()=>{
                     <span>Color: <span className="result">{e.color}</span></span>
                     <div className="priceright">
                     <span className="price">Price: <span className="result3">{e.price} €</span></span>
+                    <button className="delete"
+                    onClick={(e)=>{
+                        const deletee = e.target.parentElement.parentElement.children[0].textContent.replace('ID : ','');
+                        // console.log(deletee);
+                        axios.delete(`http://localhost:3000/products/id/${deletee}`)
+                    }} 
+                    >Delete</button>
                     </div>
                     </div>
                     </div>
