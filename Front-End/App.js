@@ -25,7 +25,6 @@ const App = ()=>{
             <h1> Welcome To Our Shop</h1>
             <div className="main">
                 { (data !== '') ? 
-
                     data.map( (e)=>{
                        return <div className="products">
                            <div className="secoundproducts">
